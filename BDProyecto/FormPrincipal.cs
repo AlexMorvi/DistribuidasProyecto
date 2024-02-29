@@ -75,17 +75,7 @@ namespace BDProyecto
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-            refrescar_consulta();
-        }
-
-        public void refrescar_consulta()
-        {
-            dataGridView.DataSource = ClienteData.mostrar_clientes(this.conexion);
-        }
-
-        private void dataGridView_SelectionChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

@@ -18,3 +18,16 @@ C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\De
 C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.Up2Date
 C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.exe
 C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.pdb
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.AssemblyReference.cache
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormPrincipal.resources
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.Login.resources
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.Properties.Resources.resources
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.GenerateResource.cache
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.CoreCompileInputs.cache
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.exe
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.pdb
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\bin\Debug\BDProyecto.exe.config
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\bin\Debug\BDProyecto.exe
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\bin\Debug\BDProyecto.pdb
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.CopyComplete
