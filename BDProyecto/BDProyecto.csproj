@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reparacion.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteData.cs" />
     <Compile Include="Cliente_Nomina.cs" />
@@ -72,7 +73,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reparacion_QuitoData.cs" />
+    <Compile Include="ReparacionData.cs" />
     <Compile Include="Taller.cs" />
     <Compile Include="TallerData.cs" />
     <Compile Include="Telefono.cs" />
