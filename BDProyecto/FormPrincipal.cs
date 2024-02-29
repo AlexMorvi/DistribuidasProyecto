@@ -77,7 +77,23 @@ namespace BDProyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new FormEmpleado());
+        }
 
+        private void AbrirFormInPanel(object formhijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            Form fh = formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Show();
+        }
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormCliente());
         }
     }
 }

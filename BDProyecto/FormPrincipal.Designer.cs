@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.menuVertical = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.btnReparacion = new System.Windows.Forms.Button();
             this.btnVehiculo = new System.Windows.Forms.Button();
             this.btnTaller = new System.Windows.Forms.Button();
@@ -57,7 +56,6 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
-            this.menuVertical.Controls.Add(this.button7);
             this.menuVertical.Controls.Add(this.btnReparacion);
             this.menuVertical.Controls.Add(this.btnVehiculo);
             this.menuVertical.Controls.Add(this.btnTaller);
@@ -69,22 +67,6 @@
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(246, 611);
             this.menuVertical.TabIndex = 0;
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(62)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(5, 520);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(245, 40);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Cliente";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // btnReparacion
             // 
@@ -166,6 +148,7 @@
             this.btnCliente.TabIndex = 1;
             this.btnCliente.Text = "Cliente";
             this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // pictureBox1
             // 
@@ -302,7 +285,6 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.Button btnCliente;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnReparacion;
         private System.Windows.Forms.Button btnVehiculo;
         private System.Windows.Forms.Button btnTaller;

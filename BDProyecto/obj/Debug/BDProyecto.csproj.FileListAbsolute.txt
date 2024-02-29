@@ -31,3 +31,5 @@ C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\bin\Debug\BDP
 C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\bin\Debug\BDProyecto.pdb
 C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.CopyComplete
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormCliente.resources
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormEmpleado.resources
