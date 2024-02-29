@@ -1,0 +1,6 @@
+C:\Users\LabP3E003\Source\Repos\BDProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.AssemblyReference.cache
+C:\Users\LabP3E003\Source\Repos\BDProyecto\BDProyecto\obj\Debug\BDProyecto.FormPrincipal.resources
+C:\Users\LabP3E003\Source\Repos\BDProyecto\BDProyecto\obj\Debug\BDProyecto.Login.resources
+C:\Users\LabP3E003\Source\Repos\BDProyecto\BDProyecto\obj\Debug\BDProyecto.Properties.Resources.resources
+C:\Users\LabP3E003\Source\Repos\BDProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.GenerateResource.cache
+C:\Users\LabP3E003\Source\Repos\BDProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.CoreCompileInputs.cache
