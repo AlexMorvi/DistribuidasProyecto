@@ -10,14 +10,16 @@ namespace BDProyecto
     {
         public int cod_empleado { get; set; }
         public string telefono_empleado { get; set; }
+        public int cod_taller { get; set; }
         public Telefono() 
         {
 
         }
-        public Telefono(int cod_empleado, string telefono_empleado)
+        public Telefono(int cod_empleado, string telefono_empleado, int cod_taller)
         {
             this.cod_empleado = cod_empleado;
             this.telefono_empleado = telefono_empleado;
+            this.cod_taller = cod_taller;
         }
     }
 }
