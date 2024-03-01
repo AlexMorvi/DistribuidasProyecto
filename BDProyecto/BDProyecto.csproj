@@ -82,11 +82,7 @@
     <Compile Include="Reparacion.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteData.cs" />
-    <Compile Include="Cliente_Nomina.cs" />
-    <Compile Include="Cliente_NominaData.cs" />
     <Compile Include="Conexion.cs" />
-    <Compile Include="Director_Taller.cs" />
-    <Compile Include="Director_TallerData.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="EmpleadoData.cs" />
     <Compile Include="FormPrincipal.cs">
@@ -108,8 +104,6 @@
     <Compile Include="TallerData.cs" />
     <Compile Include="Telefono.cs" />
     <Compile Include="TelefonoData.cs" />
-    <Compile Include="Vehiculo_placa.cs" />
-    <Compile Include="Vehiculo_placaData.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="VehiculoData.cs" />
     <EmbeddedResource Include="FormReparacion.resx">
