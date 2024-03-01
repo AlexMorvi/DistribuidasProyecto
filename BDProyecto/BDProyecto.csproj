@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormTaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaller.Designer.cs">
+      <DependentUpon>FormTaller.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Vehiculo_placaData.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="VehiculoData.cs" />
+    <EmbeddedResource Include="FormTaller.resx">
+      <DependentUpon>FormTaller.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormVehiculo.resx">
       <DependentUpon>FormVehiculo.cs</DependentUpon>
     </EmbeddedResource>

@@ -50,3 +50,4 @@ C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProye
 C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.exe
 C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.pdb
 C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormVehiculo.resources
+C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormTaller.resources
