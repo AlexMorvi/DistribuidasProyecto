@@ -105,5 +105,10 @@ namespace BDProyecto
         {
             AbrirFormInPanel(new FormTaller());
         }
+
+        private void btnReparacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormReparacion());
+        }
     }
 }

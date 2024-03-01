@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormReparacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReparacion.Designer.cs">
+      <DependentUpon>FormReparacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTaller.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <Compile Include="Vehiculo_placaData.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="VehiculoData.cs" />
+    <EmbeddedResource Include="FormReparacion.resx">
+      <DependentUpon>FormReparacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTaller.resx">
       <DependentUpon>FormTaller.cs</DependentUpon>
     </EmbeddedResource>

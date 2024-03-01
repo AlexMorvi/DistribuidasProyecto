@@ -83,6 +83,7 @@
             this.btnReparacion.TabIndex = 5;
             this.btnReparacion.Text = "Reparación";
             this.btnReparacion.UseVisualStyleBackColor = true;
+            this.btnReparacion.Click += new System.EventHandler(this.btnReparacion_Click);
             // 
             // btnVehiculo
             // 
