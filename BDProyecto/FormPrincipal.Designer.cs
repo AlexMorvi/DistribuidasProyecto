@@ -99,6 +99,7 @@
             this.btnVehiculo.TabIndex = 4;
             this.btnVehiculo.Text = "Vehículo";
             this.btnVehiculo.UseVisualStyleBackColor = true;
+            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
             // btnTaller
             // 

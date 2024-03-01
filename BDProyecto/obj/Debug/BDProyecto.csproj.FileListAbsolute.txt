@@ -49,3 +49,4 @@ C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProye
 C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.Up2Date
 C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.exe
 C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.pdb
+C:\Users\Kevin Pc\Source\Repos\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormVehiculo.resources

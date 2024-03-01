@@ -95,5 +95,10 @@ namespace BDProyecto
         {
             AbrirFormInPanel(new FormCliente());
         }
+
+        private void btnVehiculo_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormVehiculo());
+        }
     }
 }
