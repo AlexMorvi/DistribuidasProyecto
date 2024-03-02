@@ -26,5 +26,22 @@ namespace BDProyecto
         {
 
         }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+            refressPantalla();
+        }
+
+        public void refressPantalla()
+        {
+
+            Conexion conexion = new Conexion("BD-QUITO", "QuitoTaller", "sa", "P@ssw0rd");
+            dataGridView1.DataSource = ClienteData.mostrar_clientes(conexion);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

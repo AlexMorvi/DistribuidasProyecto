@@ -34,11 +34,21 @@ namespace BDProyecto
         }
         public static List<Cliente> mostrar_clientes(Conexion conexion)
         {
+            //Cliente cliente = new Cliente();
             List<Cliente> lista = new List<Cliente>();
             using (conexion.obtener_Conexion())
+
+                
             {
+                String query = "";
                 conexion.abrir_Conexion();
-                string query = "select nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono from cliente_Quito";
+                if (conexion.data_source.Equals("BD-QUITO"))
+                    query = $"select * from cliente where cod_taller=1";
+                if (conexion.data_source.Equals("BD-GUAYAQUIL"))
+                    query = $"select * from cliente where cod_taller=2";
+
+                //string query = "select nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono from cliente_Quito";
+
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
