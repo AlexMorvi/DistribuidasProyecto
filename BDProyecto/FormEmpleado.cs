@@ -12,9 +12,11 @@ namespace BDProyecto
 {
     public partial class FormEmpleado : Form
     {
-        public FormEmpleado()
+        private string conexion;
+        public FormEmpleado(string conexion)
         {
             InitializeComponent();
+            this.conexion = conexion;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -25,6 +27,16 @@ namespace BDProyecto
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormEmpleado_Load(object sender, EventArgs e)
+        {
+            refressPantalla();
+        }
+
+        public void refressPantalla()
+        {
+            dataGridView1.DataSource = EmpleadoData.mostrar_empleados(conexion);
         }
     }
 }

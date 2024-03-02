@@ -27,14 +27,24 @@ namespace BDProyecto
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static List<Empleado> mostrar_empleado_quito(Conexion conexion)
+        public static List<Empleado> mostrar_empleados(String conexion)
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             List<Empleado> lista = new List<Empleado>();
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                conexion.abrir_Conexion();
-                string query = "select cod_empleado, cod_taller, cedula_empleado, nombre_empleado, apellido_empleado, salario, fecha_inicio";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = "select cod_empleado, cod_taller, cedula_empleado, nombre_empleado, apellido_empleado, salario, fecha_inicio from empleado ";
+                if (conexion.Contains("QUITO"))
+                {
+                    query += " where cod_taller = 1";
+                }
+                if (conexion.Contains("GUAYAQUIL"))
+                {
+                    query += " where cod_taller = 2";
+                }
+
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -44,11 +54,11 @@ namespace BDProyecto
                     empleado.cedula_empleado = reader.GetString(2);
                     empleado.nombre_empleado = reader.GetString(3);
                     empleado.apellido_empleado = reader.GetString(4);
-                    empleado.salario = reader.GetInt32(5);
+                    empleado.salario = reader.GetDecimal(5);
                     empleado.fecha_inicio = reader.GetDateTime(6);
                     lista.Add(empleado);
                 }
-                conexion.cerrar_Conexion();
+                sqlConnection.Close();
                 return lista;
             }
 

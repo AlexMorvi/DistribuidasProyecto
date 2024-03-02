@@ -134,7 +134,7 @@
             this.btnEmpleado.TabIndex = 2;
             this.btnEmpleado.Text = "Empleado";
             this.btnEmpleado.UseVisualStyleBackColor = true;
-            this.btnEmpleado.Click += new System.EventHandler(this.button1_Click);
+            this.btnEmpleado.Click += new System.EventHandler(this.buttonEmpledo_Click);
             // 
             // btnCliente
             // 

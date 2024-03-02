@@ -74,11 +74,6 @@ namespace BDProyecto
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new FormEmpleado());
-        }
-
         private void AbrirFormInPanel(object formhijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
@@ -95,6 +90,11 @@ namespace BDProyecto
             AbrirFormInPanel(new FormCliente(this.conexion));
         }
 
+        private void buttonEmpledo_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormEmpleado(this.conexion));
+        }
+
         private void btnVehiculo_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FormVehiculo(this.conexion));
@@ -109,5 +109,6 @@ namespace BDProyecto
         {
             AbrirFormInPanel(new FormReparacion());
         }
+               
     }
 }
