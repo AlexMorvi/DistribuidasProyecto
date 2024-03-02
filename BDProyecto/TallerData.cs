@@ -14,8 +14,8 @@ namespace BDProyecto
             int retorno = 0;
             using (conexion.obtener_Conexion()) 
             {
-                string query = "Insert into taller_Quito (cod_taller, nombre_taller, localidad_taller)" +
-                $"values ({taller_Quito.cod_taller}, {taller_Quito.nombre_taller}, {taller_Quito.localidad_taller})";
+                string query = "Insert into taller_Quito (cod_taller, nombre_taller, localidad_taller, cod_empleado)" +
+                $"values ({taller_Quito.cod_taller}, {taller_Quito.nombre_taller}, {taller_Quito.localidad_taller}, {taller_Quito.cod_empleado})";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
             }
@@ -28,7 +28,7 @@ namespace BDProyecto
             using (conexion.obtener_Conexion() ) 
             {
                 conexion.abrir_Conexion();
-                string query = "select cod_taller, nombre_taller, localidad_taller from taller_Quito";
+                string query = "select cod_taller, nombre_taller, localidad_taller cod_empleado from taller_Quito";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) 
@@ -37,6 +37,7 @@ namespace BDProyecto
                     taller_Quito.cod_taller = reader.GetInt32 (0);
                     taller_Quito.nombre_taller = reader.GetString (1);
                     taller_Quito.localidad_taller = reader.GetString(2);
+                    taller_Quito.cod_empleado = reader.GetInt32(3);
                     lista.Add(taller_Quito);
                 }
                 conexion.cerrar_Conexion();
@@ -51,7 +52,7 @@ namespace BDProyecto
                 conexion.abrir_Conexion();
                 string query = $"update taller_Quito set cod_taller={taller_Quito.cod_taller}, " +
                     $"nombre_taller={taller_Quito.nombre_taller}, localidad_taller={taller_Quito.localidad_taller} " +
-                    $"from taller_Quito where cod_taller={taller_Quito.cod_taller}";
+                    $"cod_empleado={taller_Quito.cod_empleado} from taller_Quito where cod_taller={taller_Quito.cod_taller}";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
             }

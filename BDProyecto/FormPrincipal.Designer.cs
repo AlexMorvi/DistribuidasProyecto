@@ -83,6 +83,7 @@
             this.btnReparacion.TabIndex = 5;
             this.btnReparacion.Text = "Reparación";
             this.btnReparacion.UseVisualStyleBackColor = true;
+            this.btnReparacion.Click += new System.EventHandler(this.btnReparacion_Click);
             // 
             // btnVehiculo
             // 
@@ -99,6 +100,7 @@
             this.btnVehiculo.TabIndex = 4;
             this.btnVehiculo.Text = "Vehículo";
             this.btnVehiculo.UseVisualStyleBackColor = true;
+            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
             // btnTaller
             // 
@@ -115,6 +117,7 @@
             this.btnTaller.TabIndex = 3;
             this.btnTaller.Text = "Taller";
             this.btnTaller.UseVisualStyleBackColor = true;
+            this.btnTaller.Click += new System.EventHandler(this.btnTaller_Click);
             // 
             // btnEmpleado
             // 

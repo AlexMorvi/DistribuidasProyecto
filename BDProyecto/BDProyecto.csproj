@@ -49,6 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormReparacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReparacion.Designer.cs">
+      <DependentUpon>FormReparacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaller.Designer.cs">
+      <DependentUpon>FormTaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVehiculo.Designer.cs">
+      <DependentUpon>FormVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +82,7 @@
     <Compile Include="Reparacion.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteData.cs" />
-    <Compile Include="Cliente_Nomina.cs" />
-    <Compile Include="Cliente_NominaData.cs" />
     <Compile Include="Conexion.cs" />
-    <Compile Include="Director_Taller.cs" />
-    <Compile Include="Director_TallerData.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="EmpleadoData.cs" />
     <Compile Include="FormPrincipal.cs">
@@ -90,10 +104,17 @@
     <Compile Include="TallerData.cs" />
     <Compile Include="Telefono.cs" />
     <Compile Include="TelefonoData.cs" />
-    <Compile Include="Vehiculo_placa.cs" />
-    <Compile Include="Vehiculo_placaData.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="VehiculoData.cs" />
+    <EmbeddedResource Include="FormReparacion.resx">
+      <DependentUpon>FormReparacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaller.resx">
+      <DependentUpon>FormTaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVehiculo.resx">
+      <DependentUpon>FormVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEmpleado.resx">
       <DependentUpon>FormEmpleado.cs</DependentUpon>
     </EmbeddedResource>

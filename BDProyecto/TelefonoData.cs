@@ -17,8 +17,8 @@ namespace BDProyecto
             using (conexion.obtener_Conexion()) 
             {
                 conexion.abrir_Conexion();
-                string query = "insert into telefono_Quito (cod_empleado, telefono_empleado) " +
-                    $"values ({telefono_Quito.cod_empleado}, {telefono_Quito.telefono_empleado})";
+                string query = "insert into telefono_Quito (cod_empleado, telefono_empleado, cod_taller) " +
+                    $"values ({telefono_Quito.cod_empleado}, {telefono_Quito.telefono_empleado}, {telefono_Quito.cod_taller})";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
             }
@@ -31,7 +31,7 @@ namespace BDProyecto
             using (conexion.obtener_Conexion()) 
             {
                 conexion.abrir_Conexion ();
-                string query = "select cod_empleado, telefono_empleado from telefono_Quito";
+                string query = "select cod_empleado, telefono_empleado cod_taller from telefono_Quito";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -39,6 +39,7 @@ namespace BDProyecto
                     Telefono telefono_Quito = new Telefono ();
                     telefono_Quito.cod_empleado = reader.GetInt32 (0);
                     telefono_Quito.telefono_empleado  =reader.GetString (1);
+                    telefono_Quito.cod_taller = reader.GetInt32(2);
                     lista.Add (telefono_Quito);
                 }
                 conexion.cerrar_Conexion();
@@ -52,8 +53,8 @@ namespace BDProyecto
             {
                 conexion.abrir_Conexion();
                 string query = $"update telefono_Quito set cod_empleado={telefono_Quito.cod_empleado}," +
-                    $" telefono_empleado={telefono_Quito.telefono_empleado} from telefono_Quito " +
-                    $"where cod_empleado={telefono_Quito.cod_empleado}";
+                    $" telefono_empleado={telefono_Quito.telefono_empleado}, cod_taller={telefono_Quito.cod_taller}" +
+                    $" from telefono_Quito where cod_empleado={telefono_Quito.cod_empleado}";
                 SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
                 retorno = cmd.ExecuteNonQuery();
             }
