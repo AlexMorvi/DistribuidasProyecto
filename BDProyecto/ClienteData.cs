@@ -72,31 +72,34 @@ namespace BDProyecto
             
 
         }
-        public static int actualizar_datos_cliente(Cliente cliente, Conexion conexion)
+        public static int actualizar_datos_cliente(Cliente cliente, string conexion)
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             int retorno = 0;
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                conexion.abrir_Conexion();
-                string query = $"update cliente_Quito set nombre_cliente={cliente.nombre_cliente}, apellido_cliente={cliente.apellido_cliente}, cod_taller={cliente.cod_taller}, cedula_cliente={cliente.cedula_cliente}, ciudad_residencia={cliente.ciudad_residencia}, telefono={cliente.telefono} from cliente_Quito where" +
+                string query = $"update cliente set nombre_cliente={cliente.nombre_cliente}, apellido_cliente={cliente.apellido_cliente}, cod_taller={cliente.cod_taller}, cedula_cliente={cliente.cedula_cliente}, ciudad_residencia={cliente.ciudad_residencia}, telefono={cliente.telefono} from cliente where" +
                     $"nombre_cliente={cliente.nombre_cliente} and apellido_cliente={cliente.apellido_cliente}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
-            conexion.cerrar_Conexion();
+            sqlConnection.Close();
             return retorno;
         }
-        public static int eliminar_cliente(Cliente cliente, Conexion conexion)
+        public static int eliminar_cliente(Cliente cliente, string conexion)
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             int retorno = 0;
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                conexion.abrir_Conexion();
-                string query = $"delete from cliente_Quito where nombre_cliente={cliente.nombre_cliente} and apellido_cliente={cliente.apellido_cliente}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                
+                string query = $"delete from cliente where nombre_cliente={cliente.nombre_cliente} and apellido_cliente={cliente.apellido_cliente}";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
-            conexion.cerrar_Conexion();
+            sqlConnection.Close();
             return retorno;
         }
     }
