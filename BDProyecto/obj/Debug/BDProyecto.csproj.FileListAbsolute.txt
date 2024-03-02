@@ -76,3 +76,6 @@ C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\De
 C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormVehiculo.resources
 C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormEmpleado.resources
 C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormCliente.resources
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormReparacion.resources
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormTaller.resources
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormVehiculo.resources

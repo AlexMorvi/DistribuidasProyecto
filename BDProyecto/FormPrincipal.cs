@@ -97,7 +97,7 @@ namespace BDProyecto
 
         private void btnVehiculo_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormVehiculo());
+            AbrirFormInPanel(new FormVehiculo(this.conexion));
         }
 
         private void btnTaller_Click(object sender, EventArgs e)
