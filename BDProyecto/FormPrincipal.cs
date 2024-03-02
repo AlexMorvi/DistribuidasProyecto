@@ -14,13 +14,12 @@ namespace BDProyecto
 {
     public partial class FormPrincipal : Form
     {
-        private Conexion conexion;
+        private string conexion;
 
-        public FormPrincipal(Conexion conexion)
+        public FormPrincipal(string conexion)
         {
             InitializeComponent();
             this.conexion = conexion;
-            this.conexion.abrir_Conexion();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -93,7 +92,7 @@ namespace BDProyecto
         }
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormCliente());
+            AbrirFormInPanel(new FormCliente(this.conexion));
         }
 
         private void btnVehiculo_Click(object sender, EventArgs e)

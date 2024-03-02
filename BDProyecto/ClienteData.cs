@@ -12,44 +12,47 @@ namespace BDProyecto
 {
     public class ClienteData
     {
-        public static int insertar_cliente(Cliente cliente, Conexion conexion)
+        public static int insertar_cliente(Cliente cliente, string conexion)
         {
+            SqlConnection sqlConnection = new SqlConnection (conexion);
+            sqlConnection.Open ();
             int retorno = 0;
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                int codigo_Taller = 0;
-                if (conexion.data_source.Equals("BD-QUITO"))
+               /* int codigo_Taller = 0;
+                if (sqlConnection.data_source.Equals("BD-QUITO"))
                     codigo_Taller = 1;
                 if (conexion.data_source.Equals("BD-GUAYAQUIL"))
-                    codigo_Taller = 2;
-                conexion.abrir_Conexion();
+                    codigo_Taller = 2;*/
+
                 string query = "insert into cliente_Quito (nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono) " +
-                    $"values ({cliente.nombre_cliente},{cliente.apellido_cliente},{codigo_Taller},{cliente.cedula_cliente},{cliente.ciudad_residencia},{cliente.telefono})";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                    $"values ({cliente.nombre_cliente},{cliente.apellido_cliente},{1},{cliente.cedula_cliente},{cliente.ciudad_residencia},{cliente.telefono})";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
 
             }
-            conexion.cerrar_Conexion();
+            sqlConnection.Close();
             return retorno;
         }
-        public static List<Cliente> mostrar_clientes(Conexion conexion)
+        public static List<Cliente> mostrar_clientes(string conexion)
         {
-            //Cliente cliente = new Cliente();
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open ();
             List<Cliente> lista = new List<Cliente>();
-            using (conexion.obtener_Conexion())
-
+            using (sqlConnection)
                 
             {
-                String query = "";
-                conexion.abrir_Conexion();
-                if (conexion.data_source.Equals("BD-QUITO"))
-                    query = $"select * from cliente where cod_taller=1";
-                if (conexion.data_source.Equals("BD-GUAYAQUIL"))
-                    query = $"select * from cliente where cod_taller=2";
-
-                //string query = "select nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono from cliente_Quito";
-
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = "select nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono from cliente";
+                if (conexion.Contains("QUITO"))
+                {
+                    query += " where cod_taller = 1";
+                }
+                if (conexion.Contains("GUAYAQUIL"))
+                {
+                    query += " where cod_taller = 2";
+                }
+               
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -62,9 +65,11 @@ namespace BDProyecto
                     cliente.telefono = reader.GetString(5);
                     lista.Add(cliente);
                 }
-                conexion.cerrar_Conexion();
+                sqlConnection.Close();
+                //conexion.cerrar_Conexion();
                 return lista;
             }
+            
 
         }
         public static int actualizar_datos_cliente(Cliente cliente, Conexion conexion)

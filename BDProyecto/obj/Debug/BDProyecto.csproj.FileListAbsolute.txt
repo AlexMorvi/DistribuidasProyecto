@@ -71,3 +71,8 @@ C:\Users\Kevin Pc\Source\Repos\AlexMorvi\DistribuidasProyecto\BDProyecto\obj\Deb
 C:\Users\Kevin Pc\Source\Repos\AlexMorvi\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.csproj.Up2Date
 C:\Users\Kevin Pc\Source\Repos\AlexMorvi\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.exe
 C:\Users\Kevin Pc\Source\Repos\AlexMorvi\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.pdb
+C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormReparacion.resources
+C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormTaller.resources
+C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormVehiculo.resources
+C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormEmpleado.resources
+C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormCliente.resources

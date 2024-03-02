@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion.cs" />
     <Compile Include="FormReparacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,7 +83,6 @@
     <Compile Include="Reparacion.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteData.cs" />
-    <Compile Include="Conexion.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="EmpleadoData.cs" />
     <Compile Include="FormPrincipal.cs">

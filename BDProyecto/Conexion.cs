@@ -27,7 +27,7 @@ namespace BDProyecto
             this.conexion = new SqlConnection(cadena_Conexion);
             
         }
-        //YA VALE
+
         public void abrir_Conexion()
         {
 

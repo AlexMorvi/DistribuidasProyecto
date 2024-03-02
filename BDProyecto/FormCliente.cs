@@ -12,9 +12,11 @@ namespace BDProyecto
 {
     public partial class FormCliente : Form
     {
-        public FormCliente()
+        private string conexion;
+        public FormCliente(string conexion)
         {
             InitializeComponent();
+            this.conexion = conexion;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,9 +35,7 @@ namespace BDProyecto
         }
 
         public void refressPantalla()
-        {
-
-            Conexion conexion = new Conexion("BD-QUITO", "QuitoTaller", "sa", "P@ssw0rd");
+        {            
             dataGridView1.DataSource = ClienteData.mostrar_clientes(conexion);
         }
 

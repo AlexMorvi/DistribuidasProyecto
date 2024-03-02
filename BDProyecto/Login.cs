@@ -13,9 +13,9 @@ namespace BDProyecto
 {
     public partial class Login : Form
     {
-        static Conexion conexionQuito = new Conexion("BD-QUITO", "QuitoTaller", "sa", "P@ssw0rd");
 
-        static Conexion conexionGuayaquil = new Conexion("BD-GUAYAQUIL", "GuayaquilTaller", "sa", "P@ssw0rd");
+        string conexionQuito = $"Data Source=BD-QUITO;Initial Catalog=QuitoTaller;User ID=sa;Password=P@ssw0rd";
+        string conexionGuayaquil = $"Data Source=BD-GUAYAQUIL;Initial Catalog=GuayaquilTaller;User ID=sa;Password=P@ssw0rd";
         public Login()
         {
             InitializeComponent();
@@ -104,17 +104,15 @@ namespace BDProyecto
                     {
                         if (comboBoxBD.Text.Equals("QUITO"))
                         {
-                            conexionQuito.abrir_Conexion();
                             FormPrincipal formPrincipal = new FormPrincipal(conexionQuito);
                             formPrincipal.Show();
-                            conexionQuito.cerrar_Conexion();
+
                         }
                         if (comboBoxBD.Text.Equals("GUAYAQUIL"))
                         {
-                            conexionGuayaquil.abrir_Conexion();
+
                             FormPrincipal formPrincipal = new FormPrincipal(conexionGuayaquil);
                             formPrincipal.Show();
-                            conexionGuayaquil.cerrar_Conexion();
                         } 
                         this.Hide();
                         MessageBox.Show("Conexion a SQL Exitosa");
