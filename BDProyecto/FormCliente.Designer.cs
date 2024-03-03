@@ -46,6 +46,7 @@
             this.txtCodTaller = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.txtLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(478, 391);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // label2
             // 
@@ -247,6 +249,25 @@
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
+            // txtLimpiar
+            // 
+            this.txtLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
+            this.txtLimpiar.FlatAppearance.BorderSize = 0;
+            this.txtLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(62)))));
+            this.txtLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLimpiar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("txtLimpiar.Image")));
+            this.txtLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtLimpiar.Location = new System.Drawing.Point(94, 391);
+            this.txtLimpiar.Name = "txtLimpiar";
+            this.txtLimpiar.Size = new System.Drawing.Size(134, 40);
+            this.txtLimpiar.TabIndex = 20;
+            this.txtLimpiar.Text = "Limpiar";
+            this.txtLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtLimpiar.UseVisualStyleBackColor = false;
+            this.txtLimpiar.Click += new System.EventHandler(this.txtLimpiar_Click);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +275,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(794, 561);
+            this.Controls.Add(this.txtLimpiar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtCodTaller);
@@ -300,5 +322,6 @@
         private System.Windows.Forms.TextBox txtCodTaller;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button txtLimpiar;
     }
 }

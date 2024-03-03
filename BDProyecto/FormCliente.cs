@@ -32,6 +32,10 @@ namespace BDProyecto
         private void FormCliente_Load(object sender, EventArgs e)
         {
             refressPantalla();
+            
+            //txtNombre.Enabled = false;
+            //txtApellido.Enabled = false;
+            //txtCedula.Enabled = false;
         }
 
         public void refressPantalla()
@@ -55,6 +59,29 @@ namespace BDProyecto
             Cliente cliente = new Cliente(nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono);
             ClienteData.insertar_cliente(cliente, conexion);
             refressPantalla();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            
+                txtNombre.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["nombre_cliente"].Value);
+                txtApellido.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["apellido_cliente"].Value);
+                txtCodTaller.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["cod_taller"].Value);
+                txtCedula.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["cedula_cliente"].Value);
+                txtCiudad.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["ciudad_residencia"].Value);
+                txtTelefono.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["telefono"].Value);
+
+            
+        }
+
+        private void txtLimpiar_Click(object sender, EventArgs e)
+        {
+            txtApellido.Clear();
+            txtNombre.Clear();
+            txtCedula.Clear();
+            txtCiudad.Clear();
+            txtCodTaller.Clear();
+            txtTelefono.Clear();
         }
     }
 }
