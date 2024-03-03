@@ -54,6 +54,7 @@ namespace BDProyecto
             string telefono = txtTelefono.Text;
             Cliente cliente = new Cliente(nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono);
             ClienteData.insertar_cliente(cliente, conexion);
+            refressPantalla();
         }
     }
 }
