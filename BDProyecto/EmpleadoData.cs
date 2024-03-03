@@ -19,11 +19,8 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = "insert into empleado (cod_empleado, cod_taller, cedula_empleado, " +
-                    $" nombre_empleado, apellido_empleado, salario, fecha_inicio) values" +
-                    $" ({empleado.cod_empleado},{empleado.cod_taller},{empleado.cedula_empleado}," +
-                    $"{empleado.nombre_empleado},{empleado.apellido_empleado},{empleado.salario}," +
-                    $"{empleado.fecha_inicio})";
+                string query = "insert into empleado (cod_empleado, cod_taller, cedula_empleado, nombre_empleado, apellido_empleado, salario, fecha_inicio) " +
+                    $"values ({empleado.cod_empleado},{empleado.cod_taller},'{empleado.cedula_empleado}', '{empleado.nombre_empleado}','{empleado.apellido_empleado}',{empleado.salario}, '{empleado.fecha_inicio}')";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
 
