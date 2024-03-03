@@ -43,6 +43,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnTelefono = new System.Windows.Forms.Button();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.barraTitulo.SuspendLayout();
@@ -56,6 +57,7 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
+            this.menuVertical.Controls.Add(this.btnTelefono);
             this.menuVertical.Controls.Add(this.btnReparacion);
             this.menuVertical.Controls.Add(this.btnVehiculo);
             this.menuVertical.Controls.Add(this.btnTaller);
@@ -253,6 +255,24 @@
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
+            // btnTelefono
+            // 
+            this.btnTelefono.FlatAppearance.BorderSize = 0;
+            this.btnTelefono.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(62)))));
+            this.btnTelefono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTelefono.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnTelefono.Image = ((System.Drawing.Image)(resources.GetObject("btnTelefono.Image")));
+            this.btnTelefono.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTelefono.Location = new System.Drawing.Point(3, 517);
+            this.btnTelefono.Name = "btnTelefono";
+            this.btnTelefono.Size = new System.Drawing.Size(245, 40);
+            this.btnTelefono.TabIndex = 6;
+            this.btnTelefono.Text = "Telefonos Empleados   ";
+            this.btnTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,5 +312,6 @@
         private System.Windows.Forms.Button btnVehiculo;
         private System.Windows.Forms.Button btnTaller;
         private System.Windows.Forms.Button btnEmpleado;
+        private System.Windows.Forms.Button btnTelefono;
     }
 }

@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="FormTelefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTelefono.Designer.cs">
+      <DependentUpon>FormTelefono.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReparacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <Compile Include="TelefonoData.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="VehiculoData.cs" />
+    <EmbeddedResource Include="FormTelefono.resx">
+      <DependentUpon>FormTelefono.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReparacion.resx">
       <DependentUpon>FormReparacion.cs</DependentUpon>
     </EmbeddedResource>

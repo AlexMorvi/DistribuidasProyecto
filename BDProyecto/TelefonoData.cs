@@ -11,7 +11,7 @@ namespace BDProyecto
 {
     public class TelefonoData
     {
-        public static int insertar_telefono_Quito(Telefono telefono_Quito, string conexion) 
+        public static int insertar_telefono(Telefono telefono_Quito, string conexion) 
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
             sqlConnection.Open();
@@ -27,7 +27,7 @@ namespace BDProyecto
             }
             
         }
-        public static List<Telefono> mostrar_telefonos_Quito(string conexion) 
+        public static List<Telefono> mostrar_telefonos(string conexion) 
         {
             SqlConnection sqlConnection = new SqlConnection (conexion);
             sqlConnection.Open();
@@ -54,9 +54,10 @@ namespace BDProyecto
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
             int retorno = 0;
+            sqlConnection.Open();
             using (sqlConnection) 
             {
-                string query = $"delete from telefono_Quito where cod_empleado={telefono.cod_empleado}";
+                string query = $"delete from telefono where telefono_empleado = '{telefono.telefono_empleado}'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }

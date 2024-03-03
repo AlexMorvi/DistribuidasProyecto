@@ -109,6 +109,10 @@ namespace BDProyecto
         {
             AbrirFormInPanel(new FormReparacion(this.conexion));
         }
-               
+
+        private void btnTelefono_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormTelefono(this.conexion));
+        }
     }
 }

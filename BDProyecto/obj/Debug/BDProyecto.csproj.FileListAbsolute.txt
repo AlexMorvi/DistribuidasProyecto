@@ -79,3 +79,4 @@ C:\Users\jorma\OneDrive\Documentos\GitHub\DistribuidasProyecto\BDProyecto\obj\De
 C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormReparacion.resources
 C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormTaller.resources
 C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormVehiculo.resources
+C:\Users\Alex MRV\Documents\GitHub\DistribuidasProyecto\BDProyecto\obj\Debug\BDProyecto.FormTelefono.resources
