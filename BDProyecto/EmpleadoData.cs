@@ -12,21 +12,26 @@ namespace BDProyecto
 {
     public class EmpleadoData
     {
-        public static int insertar_empleado_quito(Empleado empleado, Conexion conexion)
+        public static int insertar_empleado(Empleado empleado, string conexion)
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             int retorno = 0;
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                conexion.abrir_Conexion();
-                string query = "insert into empleado_Quito (cod_empleado, cod_taller, cedula_empleado, nombre_empleado, apellido_empleado, salario, fecha_inicio) " +
-                    $"values ({empleado.cod_empleado},{empleado.cod_taller},{empleado.cedula_empleado},{empleado.nombre_empleado},{empleado.apellido_empleado},{empleado.salario},{empleado.fecha_inicio})";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = "insert into empleado (cod_empleado, cod_taller, cedula_empleado, " +
+                    $" nombre_empleado, apellido_empleado, salario, fecha_inicio) values" +
+                    $" ({empleado.cod_empleado},{empleado.cod_taller},{empleado.cedula_empleado}," +
+                    $"{empleado.nombre_empleado},{empleado.apellido_empleado},{empleado.salario}," +
+                    $"{empleado.fecha_inicio})";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
 
             }
-            conexion.cerrar_Conexion();
+            sqlConnection.Close();
             return retorno;
         }
+
         public static List<Empleado> mostrar_empleados(String conexion)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
@@ -63,31 +68,39 @@ namespace BDProyecto
             }
 
         }
-        public static int actualizar_empleado_quito(Empleado empleado, Conexion conexion)
+        public static int actualizar_empleado(Empleado empleado, string conexion)
         {
+
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             int retorno = 0;
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                conexion.abrir_Conexion();
-                string query = $"update empleado_Quito set cod_empleado={empleado.cod_empleado}, cod_taller = {empleado.cod_taller}, cedula_empleado = {empleado.cedula_empleado},nombre_empleado = {empleado.nombre_empleado},apellido_empleado={empleado.apellido_empleado},salario={empleado.salario},fecha_inicio={empleado.fecha_inicio} from empleado_Quito where" +
-                    $"cod_empleado={empleado.cod_empleado}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = $"update empleado set cedula_empleado={empleado.cedula_empleado}," +
+                    $" nombre_empleado={empleado.nombre_empleado}, apellido_empleado={empleado.apellido_empleado}," +
+                    $" salario={empleado.salario}, fecha_inicio={empleado.fecha_inicio}" +
+                    $" where nombre_empelado={empleado.nombre_empleado} and apellido_empleado={empleado.apellido_empleado}";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
-            conexion.cerrar_Conexion();
+            sqlConnection.Close();
             return retorno;
+
         }
-        public static int eliminar_empleado_quito(Empleado empleado, Conexion conexion)
+        public static int eliminar_empleado(Empleado empleado, string conexion)
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             int retorno = 0;
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                conexion.abrir_Conexion();
-                string query = $"delete from empleado_Quito where cod_empleado={empleado.cod_empleado}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = $"delete from empleado where cod_empleado={empleado.cod_empleado} and " +
+                    $"nombre_empleado={empleado.nombre_empleado} and" +
+                    $" apellido_empleado={empleado.apellido_empleado}";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
-            conexion.cerrar_Conexion();
+            sqlConnection.Close();
             return retorno;
         }
     }
