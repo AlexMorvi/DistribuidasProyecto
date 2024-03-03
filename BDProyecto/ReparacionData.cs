@@ -62,8 +62,8 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = $"update reparacion_Quito set tipo_reparacion='{reparacion.tipo_reparacion}',precio={reparacion.precio},fecha_reparacion='{reparacion.fecha_reparacion}',observaciones='{reparacion.observaciones}' from reparacion where" +
-                    $"placa = {reparacion.placa} and cod_reparacion={reparacion.cod_reparacion} and cod_taller = {reparacion.cod_taller}";
+                string query = $"update reparacion set tipo_reparacion='{reparacion.tipo_reparacion}',precio={reparacion.precio},fecha_reparacion='{reparacion.fecha_reparacion}',observaciones='{reparacion.observaciones}' from reparacion where" +
+                    $" placa = '{reparacion.placa}' and cod_reparacion={reparacion.cod_reparacion} and cod_taller = {reparacion.cod_taller}";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
@@ -76,7 +76,7 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = $"delete from reparacion where placa = {reparacion.placa} and cod_reparacion={reparacion.cod_reparacion} and cod_taller = {reparacion.cod_taller}";
+                string query = $"delete from reparacion where placa = '{reparacion.placa}' and cod_reparacion={reparacion.cod_reparacion} and cod_taller = {reparacion.cod_taller}";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }

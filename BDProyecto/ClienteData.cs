@@ -94,7 +94,7 @@ namespace BDProyecto
             using (sqlConnection)
             {
                 
-                string query = $"delete from cliente where nombre_cliente={cliente.nombre_cliente} and apellido_cliente={cliente.apellido_cliente}";
+                string query = $"delete from cliente where nombre_cliente='{cliente.nombre_cliente}' and apellido_cliente='{cliente.apellido_cliente}'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }

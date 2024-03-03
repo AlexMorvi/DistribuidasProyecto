@@ -65,33 +65,31 @@ namespace BDProyecto
             }
 
         }
-        public static int actualizar_vehiculos_Quito(Vehiculo vehiculo_Quito, string conexion)
+        public static int actualizar_vehiculos_Quito(Vehiculo vehiculo, string conexion)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
             sqlConnection.Open();
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = $"update vehiculo set placa={vehiculo_Quito.placa}," +
-                    $" nombre_cliente={vehiculo_Quito.nombre_cliente}, apellido_cliente={vehiculo_Quito.apellido_cliente}," +
-                    $" cod_taller={vehiculo_Quito.cod_taller}, num_matricula={vehiculo_Quito.num_matricula}," +
-                    $" fecha_compra={vehiculo_Quito.fecha_compra} from vehiculo where" +
-                    $"nombre_cliente={vehiculo_Quito.nombre_cliente} and apellido_cliente={vehiculo_Quito.apellido_cliente}";
+                string query = $"update vehiculo set num_matricula='{vehiculo.num_matricula}'," +
+                    $" fecha_compra='{vehiculo.fecha_compra}' from vehiculo where" +
+                    $" placa = '{vehiculo.placa}' and cod_taller = {vehiculo.cod_taller}";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
             sqlConnection.Close();
             return retorno;
         }
-        public static int eliminar_vehiculo_Quito(Vehiculo vehiculo_Quito, string conexion)
+        public static int eliminar_vehiculo_Quito(Vehiculo vehiculo, string conexion)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
             sqlConnection.Open();
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = $"delete from vehiculo where placa ={vehiculo_Quito.placa} and " +
-                    $"nombre_cliente={vehiculo_Quito.nombre_cliente} and apellido_cliente={vehiculo_Quito.apellido_cliente}";
+                string query = $"delete from vehiculo where placa ='{vehiculo.placa}' and " +
+                    $"cod_taller = {vehiculo.cod_taller}";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
