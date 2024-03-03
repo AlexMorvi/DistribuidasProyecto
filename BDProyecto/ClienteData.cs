@@ -97,6 +97,9 @@ namespace BDProyecto
                 string query = $"delete from cliente where nombre_cliente='{cliente.nombre_cliente}' and apellido_cliente='{cliente.apellido_cliente}'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
+                string query_extra = $"delete from [BD-QUITO].QuitoTaller.dbo.clientes_Totales where nombre_cliente='{cliente.nombre_cliente}' and apellido_cliente='{cliente.apellido_cliente}'";
+                SqlCommand cmd2 = new SqlCommand(query_extra, sqlConnection);
+                retorno = cmd2.ExecuteNonQuery();
             }
             sqlConnection.Close();
             return retorno;
