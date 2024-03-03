@@ -88,7 +88,7 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = $"delete from vehiculo where placa ={vehiculo.placa} and " +
+                string query = $"delete from vehiculo where placa ='{vehiculo.placa}' and " +
                     $"cod_taller = {vehiculo.cod_taller}";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
