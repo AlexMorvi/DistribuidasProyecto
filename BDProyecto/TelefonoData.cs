@@ -11,28 +11,31 @@ namespace BDProyecto
 {
     public class TelefonoData
     {
-        public static int insertar_telefono_Quito(Telefono telefono_Quito, Conexion conexion) 
+        public static int insertar_telefono_Quito(Telefono telefono_Quito, string conexion) 
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             int retorno = 0;
-            using (conexion.obtener_Conexion()) 
+            using (sqlConnection) 
             {
-                conexion.abrir_Conexion();
-                string query = "insert into telefono_Quito (cod_empleado, telefono_empleado, cod_taller) " +
-                    $"values ({telefono_Quito.cod_empleado}, {telefono_Quito.telefono_empleado}, {telefono_Quito.cod_taller})";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = "insert into telefono (cod_empleado, telefono_empleado, cod_taller) " +
+                    $"values ({telefono_Quito.cod_empleado}, '{telefono_Quito.telefono_empleado}', {telefono_Quito.cod_taller})";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
+                sqlConnection.Close();
+                return retorno;
             }
-            conexion.cerrar_Conexion();
-            return retorno;
+            
         }
-        public static List<Telefono> mostrar_telefonos_Quito(Conexion conexion) 
+        public static List<Telefono> mostrar_telefonos_Quito(string conexion) 
         {
+            SqlConnection sqlConnection = new SqlConnection (conexion);
+            sqlConnection.Open();
             List<Telefono> lista = new List<Telefono> ();
-            using (conexion.obtener_Conexion()) 
+            using (sqlConnection) 
             {
-                conexion.abrir_Conexion ();
-                string query = "select cod_empleado, telefono_empleado cod_taller from telefono_Quito";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = "select cod_empleado, telefono_empleado, cod_taller from telefono";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -42,36 +45,22 @@ namespace BDProyecto
                     telefono_Quito.cod_taller = reader.GetInt32(2);
                     lista.Add (telefono_Quito);
                 }
-                conexion.cerrar_Conexion();
+                sqlConnection.Close();
                 return lista;
             }
         }
-        public static int actualizar_telefonos_Quito(Telefono telefono_Quito, Conexion conexion) 
+      
+        public static int eliminar_telefono(Telefono telefono, string conexion) 
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
             int retorno = 0;
-            using (conexion.obtener_Conexion()) 
+            using (sqlConnection) 
             {
-                conexion.abrir_Conexion();
-                string query = $"update telefono_Quito set cod_empleado={telefono_Quito.cod_empleado}," +
-                    $" telefono_empleado={telefono_Quito.telefono_empleado}, cod_taller={telefono_Quito.cod_taller}" +
-                    $" from telefono_Quito where cod_empleado={telefono_Quito.cod_empleado}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = $"delete from telefono_Quito where cod_empleado={telefono.cod_empleado}";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
-            conexion.cerrar_Conexion() ;
-            return retorno;
-        }
-        public static int eliminar_telefono_Quito(Telefono telefono_Quito, Conexion conexion) 
-        {
-            int retorno = 0;
-            using (conexion.obtener_Conexion()) 
-            {
-                conexion.abrir_Conexion();
-                string query = $"delete from telefono_Quito where cod_empleado={telefono_Quito.cod_empleado}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
-                retorno = cmd.ExecuteNonQuery();
-            }
-            conexion.cerrar_Conexion();
+            sqlConnection.Close();
             return retorno;
         }
     }

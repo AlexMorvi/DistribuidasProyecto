@@ -92,8 +92,8 @@ namespace BDProyecto
             using (sqlConnection)
             {
                 string query = $"delete from empleado where cod_empleado={empleado.cod_empleado} and " +
-                    $"nombre_empleado={empleado.nombre_empleado} and" +
-                    $" apellido_empleado={empleado.apellido_empleado}";
+                    $"nombre_empleado='{empleado.nombre_empleado}' and" +
+                    $" apellido_empleado='{empleado.apellido_empleado}'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
