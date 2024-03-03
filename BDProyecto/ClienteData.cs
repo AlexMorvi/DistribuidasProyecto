@@ -24,6 +24,10 @@ namespace BDProyecto
                 
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
+                string query_extra = "insert into [BD-QUITO].QuitoTaller.dbo.clientes_Totales (nombre_cliente, apellido_cliente)" +
+                    $" values ('{cliente.nombre_cliente}','{cliente.apellido_cliente}')";
+                SqlCommand cmd2 = new SqlCommand(query_extra, sqlConnection);
+                retorno = cmd2.ExecuteNonQuery();
 
             }
             sqlConnection.Close();
