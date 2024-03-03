@@ -16,11 +16,13 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = "insert into vehiculo (placa, nombre_cliente, apellido_cliente, cod_taller, num_matricula," +
-                    $" fecha_compra) values ({vehiculo.placa},{vehiculo.nombre_cliente}," +
-                    $"{vehiculo.apellido_cliente},{vehiculo.cod_taller},{vehiculo.num_matricula}," +
-                    $"{vehiculo.fecha_compra})";
+                string query = "insert into vehiculo (placa, nombre_cliente, apellido_cliente, cod_taller, num_matricula, fecha_compra)"+
+                    $" values ('{vehiculo.placa}','{vehiculo.nombre_cliente}','{vehiculo.apellido_cliente}',{vehiculo.cod_taller},'{vehiculo.num_matricula}','{vehiculo.fecha_compra}')";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
+                retorno = cmd.ExecuteNonQuery();
+
+                string query_extra = "insert into placa_Vehiculo (placa)" +
+                    $" values ('{vehiculo.placa}')";
                 retorno = cmd.ExecuteNonQuery();
 
             }
