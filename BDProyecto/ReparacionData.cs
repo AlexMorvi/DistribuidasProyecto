@@ -73,6 +73,7 @@ namespace BDProyecto
         public static int eliminar_reparacion_Quito(Reparacion reparacion, string conexion)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             int retorno = 0;
             using (sqlConnection)
             {

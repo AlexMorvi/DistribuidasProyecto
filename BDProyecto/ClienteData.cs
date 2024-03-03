@@ -78,7 +78,7 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = $"update cliente set cedula_cliente='{cliente.cedula_cliente}', ciudad_residencia='{cliente.ciudad_residencia}', telefono='{cliente.telefono}' from cliente where" +
+                string query = $"update cliente set cedula_cliente='{cliente.cedula_cliente}', ciudad_residencia='{cliente.ciudad_residencia}', telefono='{cliente.telefono}' where " +
                     $"nombre_cliente='{cliente.nombre_cliente}' and apellido_cliente='{cliente.apellido_cliente}'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();

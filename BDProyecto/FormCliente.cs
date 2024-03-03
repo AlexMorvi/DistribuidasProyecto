@@ -83,5 +83,31 @@ namespace BDProyecto
             txtCodTaller.Clear();
             txtTelefono.Clear();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            string nombre_cliente = txtNombre.Text;
+            string apellido_cliente = txtApellido.Text;
+            int cod_taller = int.Parse(txtCodTaller.Text);
+            string cedula_cliente = txtCedula.Text;
+            string ciudad_residencia = txtCiudad.Text;
+            string telefono = txtTelefono.Text;
+            Cliente cliente = new Cliente(nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono);
+            ClienteData.actualizar_datos_cliente(cliente, conexion);
+            refressPantalla();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string nombre_cliente = txtNombre.Text;
+            string apellido_cliente = txtApellido.Text;
+            int cod_taller = int.Parse(txtCodTaller.Text);
+            string cedula_cliente = txtCedula.Text;
+            string ciudad_residencia = txtCiudad.Text;
+            string telefono = txtTelefono.Text;
+            Cliente cliente = new Cliente(nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono);
+            ClienteData.eliminar_cliente(cliente, conexion);
+            refressPantalla();
+        }
     }
 }

@@ -230,6 +230,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -248,6 +249,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // txtLimpiar
             // 
@@ -259,7 +261,7 @@
             this.txtLimpiar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("txtLimpiar.Image")));
             this.txtLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtLimpiar.Location = new System.Drawing.Point(94, 391);
+            this.txtLimpiar.Location = new System.Drawing.Point(94, 412);
             this.txtLimpiar.Name = "txtLimpiar";
             this.txtLimpiar.Size = new System.Drawing.Size(134, 40);
             this.txtLimpiar.TabIndex = 20;
