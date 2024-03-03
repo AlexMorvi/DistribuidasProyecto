@@ -20,7 +20,7 @@ namespace BDProyecto
             using (sqlConnection)
             {
                 string query = "insert into reparacion (placa, cod_reparacion, cod_taller, tipo_reparacion, precio, fecha_reparacion, observaciones)" +
-                    $"values ({reparacion.placa},{reparacion.cod_reparacion}, {reparacion.cod_taller}, {reparacion.tipo_reparacion},{reparacion.precio},{reparacion.fecha_reparacion},{reparacion.observaciones})";
+                    $"values ('{reparacion.placa}',{reparacion.cod_reparacion}, {reparacion.cod_taller}, '{reparacion.tipo_reparacion}',{reparacion.precio},'{reparacion.fecha_reparacion}','{reparacion.observaciones}')";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
 
