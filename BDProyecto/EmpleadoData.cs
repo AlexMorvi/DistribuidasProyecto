@@ -73,10 +73,10 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = $"update empleado set cedula_empleado={empleado.cedula_empleado}," +
-                    $" nombre_empleado={empleado.nombre_empleado}, apellido_empleado={empleado.apellido_empleado}," +
-                    $" salario={empleado.salario}, fecha_inicio={empleado.fecha_inicio}" +
-                    $" where nombre_empelado={empleado.nombre_empleado} and apellido_empleado={empleado.apellido_empleado}";
+                string query = $"update empleado set cedula_empleado='{empleado.cedula_empleado}'," +
+                    $" nombre_empleado='{empleado.nombre_empleado}', apellido_empleado='{empleado.apellido_empleado}'," +
+                    $" salario={empleado.salario}, fecha_inicio='{empleado.fecha_inicio}'" +
+                    $" where cod_empleado = {empleado.cod_empleado}";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
