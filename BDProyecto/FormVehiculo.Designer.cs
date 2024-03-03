@@ -35,17 +35,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.txtVehiculo = new System.Windows.Forms.TextBox();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtFechaInicio = new System.Windows.Forms.TextBox();
-            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.txtFechaCompra = new System.Windows.Forms.TextBox();
+            this.txtCodTaller = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -120,37 +120,37 @@
             this.label8.Size = new System.Drawing.Size(0, 18);
             this.label8.TabIndex = 10;
             // 
-            // txtNombre
+            // txtVehiculo
             // 
-            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
-            this.txtNombre.Location = new System.Drawing.Point(154, 86);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(135, 20);
-            this.txtNombre.TabIndex = 11;
+            this.txtVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
+            this.txtVehiculo.Location = new System.Drawing.Point(154, 86);
+            this.txtVehiculo.Name = "txtVehiculo";
+            this.txtVehiculo.Size = new System.Drawing.Size(135, 20);
+            this.txtVehiculo.TabIndex = 11;
             // 
-            // txtTelefono
+            // txtPlaca
             // 
-            this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
-            this.txtTelefono.Location = new System.Drawing.Point(154, 237);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(135, 20);
-            this.txtTelefono.TabIndex = 13;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
-            this.txtCedula.Location = new System.Drawing.Point(154, 184);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(135, 20);
-            this.txtCedula.TabIndex = 14;
+            this.txtPlaca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
+            this.txtPlaca.Location = new System.Drawing.Point(154, 237);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(135, 20);
+            this.txtPlaca.TabIndex = 13;
             // 
             // txtApellido
             // 
             this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
-            this.txtApellido.Location = new System.Drawing.Point(154, 135);
+            this.txtApellido.Location = new System.Drawing.Point(154, 184);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(135, 20);
-            this.txtApellido.TabIndex = 15;
+            this.txtApellido.TabIndex = 14;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
+            this.txtNombre.Location = new System.Drawing.Point(154, 135);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(135, 20);
+            this.txtNombre.TabIndex = 15;
             // 
             // btnEliminar
             // 
@@ -196,9 +196,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(26, 236);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 18);
+            this.label6.Size = new System.Drawing.Size(54, 18);
             this.label6.TabIndex = 20;
-            this.label6.Text = "N. Matrícula:";
+            this.label6.Text = "Placa:";
             // 
             // label9
             // 
@@ -224,21 +224,21 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Código taller:";
             // 
-            // txtFechaInicio
+            // txtFechaCompra
             // 
-            this.txtFechaInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
-            this.txtFechaInicio.Location = new System.Drawing.Point(154, 284);
-            this.txtFechaInicio.Name = "txtFechaInicio";
-            this.txtFechaInicio.Size = new System.Drawing.Size(135, 20);
-            this.txtFechaInicio.TabIndex = 23;
+            this.txtFechaCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
+            this.txtFechaCompra.Location = new System.Drawing.Point(154, 284);
+            this.txtFechaCompra.Name = "txtFechaCompra";
+            this.txtFechaCompra.Size = new System.Drawing.Size(135, 20);
+            this.txtFechaCompra.TabIndex = 23;
             // 
-            // txtSalario
+            // txtCodTaller
             // 
-            this.txtSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
-            this.txtSalario.Location = new System.Drawing.Point(154, 329);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(135, 20);
-            this.txtSalario.TabIndex = 24;
+            this.txtCodTaller.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(169)))), ((int)(((byte)(112)))));
+            this.txtCodTaller.Location = new System.Drawing.Point(154, 329);
+            this.txtCodTaller.Name = "txtCodTaller";
+            this.txtCodTaller.Size = new System.Drawing.Size(135, 20);
+            this.txtCodTaller.TabIndex = 24;
             // 
             // btnGuardar
             // 
@@ -266,17 +266,17 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(794, 561);
-            this.Controls.Add(this.txtSalario);
-            this.Controls.Add(this.txtFechaInicio);
+            this.Controls.Add(this.txtCodTaller);
+            this.Controls.Add(this.txtFechaCompra);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.txtCedula);
-            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtPlaca);
+            this.Controls.Add(this.txtVehiculo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -302,17 +302,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.TextBox txtVehiculo;
+        private System.Windows.Forms.TextBox txtPlaca;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtFechaInicio;
-        private System.Windows.Forms.TextBox txtSalario;
+        private System.Windows.Forms.TextBox txtFechaCompra;
+        private System.Windows.Forms.TextBox txtCodTaller;
         private System.Windows.Forms.Button btnGuardar;
     }
 }
