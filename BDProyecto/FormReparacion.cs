@@ -98,9 +98,9 @@ namespace BDProyecto
             txtCodTaller.Text = Convert.ToString(dataGridViewReparacion.CurrentRow.Cells["cod_taller"].Value);
             txtPlaca.Text = Convert.ToString(dataGridViewReparacion.CurrentRow.Cells["placa"].Value);
             txtTipoReparacion.Text = Convert.ToString(dataGridViewReparacion.CurrentRow.Cells["tipo_reparacion"].Value);
-            txtPrecio.Text = Convert.ToString(dataGridViewReparacion.CurrentRow.Cells["precio"].Value);
-            txtFecha.Text = Convert.ToString(dataGridViewReparacion.CurrentRow.Cells["fecha_reparacion"].Value);
+            txtFecha.Text = Convert.ToDateTime(dataGridViewReparacion.CurrentRow.Cells["fecha_reparacion"].Value).ToShortDateString();
             txtObservaciones.Text = Convert.ToString(dataGridViewReparacion.CurrentRow.Cells["observaciones"].Value);
+            txtPrecio.Text = Convert.ToString(Math.Floor(Convert.ToDecimal(dataGridViewReparacion.CurrentRow.Cells["precio"].Value)));
 
         }
     }
