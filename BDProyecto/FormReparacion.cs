@@ -12,8 +12,10 @@ namespace BDProyecto
 {
     public partial class FormReparacion : Form
     {
-        public FormReparacion()
+        private string conexion;
+        public FormReparacion(string conexion)
         {
+            this.conexion = conexion;
             InitializeComponent();
         }
 
@@ -45,6 +47,15 @@ namespace BDProyecto
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormReparacion_Load(object sender, EventArgs e)
+        {
+            refressPantalla();
+        }
+        public void refressPantalla()
+        {
+            dataGridViewReparacion.DataSource = ReparacionData.mostrar_reparacion(conexion);
         }
     }
 }

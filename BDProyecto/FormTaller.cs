@@ -12,9 +12,11 @@ namespace BDProyecto
 {
     public partial class FormTaller : Form
     {
-        public FormTaller()
+        private string conexion;
+        public FormTaller(string conexion)
         {
             InitializeComponent();
+            this.conexion = conexion;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,6 +52,15 @@ namespace BDProyecto
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormTaller_Load(object sender, EventArgs e)
+        {
+            refressPantalla();
+        }
+        public void refressPantalla()
+        {
+            dataGridViewTaller.DataSource = TallerData.mostrar_talleres(this.conexion);
         }
     }
 }
