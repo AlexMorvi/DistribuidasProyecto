@@ -92,7 +92,7 @@ namespace BDProyecto
                     $"cod_taller = {vehiculo.cod_taller}";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
-                string query_extra = $"delete from vehiculo_Placa where placa = '{vehiculo.placa}'";
+                string query_extra = $"delete from placa_Vehiculo where placa = '{vehiculo.placa}'";
                 SqlCommand cmd2 = new SqlCommand (query_extra, sqlConnection);
                 retorno = cmd2.ExecuteNonQuery();
             }
