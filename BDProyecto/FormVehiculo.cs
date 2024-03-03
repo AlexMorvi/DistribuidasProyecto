@@ -38,7 +38,7 @@ namespace BDProyecto
             string num_matricula = txtNumMatricula.Text;
             DateTime fecha_compra = DateTime.Parse(txtFechaCompra.Text);
             Vehiculo vehiculo = new Vehiculo(placa, nombre, apellido, cod_taller, num_matricula, fecha_compra);
-            VehiculoData.insertar_vehiculo_Quito(vehiculo, this.conexion);
+            VehiculoData.insertar_vehiculo(vehiculo, this.conexion);
             refressPantalla();
 
         }
@@ -76,7 +76,7 @@ namespace BDProyecto
             string num_matricula = txtNumMatricula.Text;
             DateTime fecha_compra = DateTime.Parse(txtFechaCompra.Text);
             Vehiculo vehiculo = new Vehiculo(placa, nombre, apellido, cod_taller, num_matricula, fecha_compra);
-            VehiculoData.actualizar_vehiculos_Quito(vehiculo, this.conexion);
+            VehiculoData.actualizar_vehiculos(vehiculo, this.conexion);
 
             refressPantalla();
         }
@@ -90,7 +90,7 @@ namespace BDProyecto
             string num_matricula = txtNumMatricula.Text;
             DateTime fecha_compra = DateTime.Parse(txtFechaCompra.Text);
             Vehiculo vehiculo = new Vehiculo(placa, nombre, apellido, cod_taller, num_matricula, fecha_compra);
-            VehiculoData.eliminar_vehiculo_Quito(vehiculo, this.conexion);
+            VehiculoData.eliminar_vehiculo(vehiculo, this.conexion);
             refressPantalla();
         }
 

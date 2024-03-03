@@ -9,7 +9,7 @@ namespace BDProyecto
 {
     public class VehiculoData
     {
-        public static int insertar_vehiculo_Quito(Vehiculo vehiculo, string conexion)
+        public static int insertar_vehiculo(Vehiculo vehiculo, string conexion)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
             sqlConnection.Open();
@@ -65,7 +65,7 @@ namespace BDProyecto
             }
 
         }
-        public static int actualizar_vehiculos_Quito(Vehiculo vehiculo, string conexion)
+        public static int actualizar_vehiculos(Vehiculo vehiculo, string conexion)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
             sqlConnection.Open();
@@ -81,7 +81,7 @@ namespace BDProyecto
             sqlConnection.Close();
             return retorno;
         }
-        public static int eliminar_vehiculo_Quito(Vehiculo vehiculo, string conexion)
+        public static int eliminar_vehiculo(Vehiculo vehiculo, string conexion)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
             sqlConnection.Open();
@@ -99,9 +99,6 @@ namespace BDProyecto
             sqlConnection.Close();
             return retorno;
         }
-        public static void eliminar_placa(Vehiculo vehiculo, string conexion)
-        {
-           
-        }
+       
     }
 }
