@@ -20,7 +20,7 @@ namespace BDProyecto
             using (sqlConnection)
             {
                 string query = "insert into reparacion (placa, cod_reparacion, cod_taller, tipo_reparacion, precio, fecha_reparacion, observaciones)" +
-                    $"values ({reparacion.placa},{reparacion.cod_reparacion}, {reparacion.cod_taller}, {reparacion.tipo_reparacion},{reparacion.precio},{reparacion.fecha_reparacion},{reparacion.observaciones})";
+                    $"values ('{reparacion.placa}',{reparacion.cod_reparacion}, {reparacion.cod_taller}, '{reparacion.tipo_reparacion}',{reparacion.precio},'{reparacion.fecha_reparacion}','{reparacion.observaciones}')";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
 
@@ -70,17 +70,17 @@ namespace BDProyecto
             sqlConnection.Close();
             return retorno;
         }
-        public static int eliminar_reparacion_Quito(Reparacion reparacion, Conexion conexion)
+        public static int eliminar_reparacion_Quito(Reparacion reparacion, string conexion)
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
             int retorno = 0;
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                conexion.abrir_Conexion();
-                string query = $"delete from reparacion_Quito where nplaca = {reparacion.placa} and cod_reparacion={reparacion.cod_reparacion}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = $"delete from reparacion where placa = {reparacion.placa} and cod_reparacion={reparacion.cod_reparacion} and cod_taller = {reparacion.cod_taller}";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
             }
-            conexion.cerrar_Conexion();
+            sqlConnection.Close();
             return retorno;
         }
     }

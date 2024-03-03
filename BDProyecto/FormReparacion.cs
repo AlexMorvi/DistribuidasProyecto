@@ -31,6 +31,16 @@ namespace BDProyecto
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            int cod_taller = int.Parse(txtCodTaller.Text);
+            int cod_reparacion = int.Parse(txtCodReparacion.Text);
+            string placa= txtPlaca.Text;
+            string tipo = txtTipoReparacion.Text;
+            decimal precio = decimal.Parse(txtPrecio.Text);
+            DateTime fecha = DateTime.Parse(txtFecha.Text);
+            string observaciones = txtObservaciones.Text;
+            Reparacion reparacion = new Reparacion(placa,cod_reparacion,cod_taller,tipo,precio,fecha,observaciones);
+            ReparacionData.insertar_reparacion(reparacion, this.conexion);
+            refressPantalla();
 
         }
 

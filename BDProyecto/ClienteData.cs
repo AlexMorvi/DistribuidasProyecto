@@ -19,14 +19,9 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-               /* int codigo_Taller = 0;
-                if (sqlConnection.data_source.Equals("BD-QUITO"))
-                    codigo_Taller = 1;
-                if (conexion.data_source.Equals("BD-GUAYAQUIL"))
-                    codigo_Taller = 2;*/
-
-                string query = "insert into cliente_Quito (nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono) " +
-                    $"values ({cliente.nombre_cliente},{cliente.apellido_cliente},{1},{cliente.cedula_cliente},{cliente.ciudad_residencia},{cliente.telefono})";
+                string query = "insert into cliente (nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono) " +
+                    $"values ('{cliente.nombre_cliente}','{cliente.apellido_cliente}',{cliente.cod_taller},'{cliente.cedula_cliente}','{cliente.ciudad_residencia}','{cliente.telefono}')";
+                
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
 
