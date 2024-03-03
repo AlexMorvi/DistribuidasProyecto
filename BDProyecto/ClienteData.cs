@@ -14,21 +14,21 @@ namespace BDProyecto
     {
         public static int insertar_cliente(Cliente cliente, string conexion)
         {
-            SqlConnection sqlConnection = new SqlConnection (conexion);
-            sqlConnection.Open ();
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = "insert into cliente (nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono) " +
-                    $"values ('{cliente.nombre_cliente}','{cliente.apellido_cliente}',{cliente.cod_taller},'{cliente.cedula_cliente}','{cliente.ciudad_residencia}','{cliente.telefono}')";
-                
+                string query = $"EXEC InsertarClienteYClienteTotal "+
+                                        $"@Nombre = '{cliente.nombre_cliente}', "+
+                                        $"@Apellido = '{cliente.apellido_cliente}', "+
+                                        $"@CodTaller = {cliente.cod_taller}, "+
+                                        $"@Cedula = '{cliente.cedula_cliente}', "+
+                                        $"@CiudadResidencia = '{cliente.ciudad_residencia}', "+
+                                        $"@Telefono = '{cliente.telefono}'";
+
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
-                string query_extra = "insert into [BD-QUITO].QuitoTaller.dbo.clientes_Totales (nombre_cliente, apellido_cliente)" +
-                    $" values ('{cliente.nombre_cliente}','{cliente.apellido_cliente}')";
-                SqlCommand cmd2 = new SqlCommand(query_extra, sqlConnection);
-                retorno = cmd2.ExecuteNonQuery();
-
             }
             sqlConnection.Close();
             return retorno;
@@ -36,10 +36,10 @@ namespace BDProyecto
         public static List<Cliente> mostrar_clientes(string conexion)
         {
             SqlConnection sqlConnection = new SqlConnection(conexion);
-            sqlConnection.Open ();
+            sqlConnection.Open();
             List<Cliente> lista = new List<Cliente>();
             using (sqlConnection)
-                
+
             {
                 string query = "select nombre_cliente, apellido_cliente, cod_taller, cedula_cliente, ciudad_residencia, telefono from cliente";
                 if (conexion.Contains("QUITO"))
@@ -50,7 +50,7 @@ namespace BDProyecto
                 {
                     query += " where cod_taller = 2";
                 }
-               
+
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -65,10 +65,9 @@ namespace BDProyecto
                     lista.Add(cliente);
                 }
                 sqlConnection.Close();
-                //conexion.cerrar_Conexion();
                 return lista;
             }
-            
+
 
         }
         public static int actualizar_datos_cliente(Cliente cliente, string conexion)
@@ -93,13 +92,12 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                
-                string query = $"delete from cliente where nombre_cliente='{cliente.nombre_cliente}' and apellido_cliente='{cliente.apellido_cliente}'";
+                string query = $"EXEC BorrarClienteDeClientesTotales " +
+               $"@Nombre = '{cliente.nombre_cliente}', " +
+               $"@Apellido = '{cliente.apellido_cliente}'";
+                //string query = $"delete from cliente where nombre_cliente='{cliente.nombre_cliente}' and apellido_cliente='{cliente.apellido_cliente}'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
-                string query_extra = $"delete from [BD-QUITO].QuitoTaller.dbo.clientes_Totales where nombre_cliente='{cliente.nombre_cliente}' and apellido_cliente='{cliente.apellido_cliente}'";
-                SqlCommand cmd2 = new SqlCommand(query_extra, sqlConnection);
-                retorno = cmd2.ExecuteNonQuery();
             }
             sqlConnection.Close();
             return retorno;

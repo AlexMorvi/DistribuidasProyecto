@@ -16,14 +16,19 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = "insert into vehiculo (placa, nombre_cliente, apellido_cliente, cod_taller, num_matricula, fecha_compra)"+
-                    $" values ('{vehiculo.placa}','{vehiculo.nombre_cliente}','{vehiculo.apellido_cliente}',{vehiculo.cod_taller},'{vehiculo.num_matricula}','{vehiculo.fecha_compra}')";
+                string query = $"EXEC InsertarEnVehiculoYPlacaVehiculo " +
+               $"@Placa = '{vehiculo.placa}', " +
+               $"@Nombre = '{vehiculo.nombre_cliente}', " +
+               $"@Apellido = '{vehiculo.apellido_cliente}'," +
+               $"@CodTaller = {vehiculo.cod_taller}, " +
+               $"@NumMatricula = '{vehiculo.num_matricula}', " +
+               $"@FechaCompra = '{vehiculo.fecha_compra}'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
-                string query_extra = "insert into placa_Vehiculo (placa)" +
-                    $" values ('{vehiculo.placa}')";
-                SqlCommand cmd2 = new SqlCommand(query_extra, sqlConnection);
-                retorno = cmd2.ExecuteNonQuery();
+                //string query_extra = "insert into placa_Vehiculo (placa)" +
+                   // $" values ('{vehiculo.placa}')";
+                //SqlCommand cmd2 = new SqlCommand(query_extra, sqlConnection);
+                //retorno = cmd2.ExecuteNonQuery();
 
             }
             sqlConnection.Close();
@@ -88,13 +93,15 @@ namespace BDProyecto
             int retorno = 0;
             using (sqlConnection)
             {
-                string query = $"delete from vehiculo where placa ='{vehiculo.placa}' and " +
-                    $"cod_taller = {vehiculo.cod_taller}";
+                //string query = $"delete from vehiculo where placa ='{vehiculo.placa}' and " +
+                //$"cod_taller = {vehiculo.cod_taller}";
+                string query = $"EXEC BorrarEnVehiculoYPlacaVehiculo " +
+                    $"@Placa = '{vehiculo.placa}'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 retorno = cmd.ExecuteNonQuery();
-                string query_extra = $"delete from placa_Vehiculo where placa = '{vehiculo.placa}'";
-                SqlCommand cmd2 = new SqlCommand (query_extra, sqlConnection);
-                retorno = cmd2.ExecuteNonQuery();
+                //string query_extra = $"delete from placa_Vehiculo where placa = '{vehiculo.placa}'";
+                //SqlCommand cmd2 = new SqlCommand (query_extra, sqlConnection);
+                //retorno = cmd2.ExecuteNonQuery();
             }
             sqlConnection.Close();
             return retorno;
