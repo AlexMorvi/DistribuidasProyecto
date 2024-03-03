@@ -40,6 +40,7 @@ namespace BDProyecto
             string observaciones = txtObservaciones.Text;
             Reparacion reparacion = new Reparacion(placa,cod_reparacion,cod_taller,tipo,precio,fecha,observaciones);
             ReparacionData.insertar_reparacion(reparacion, this.conexion);
+            refressPantalla();
 
         }
 

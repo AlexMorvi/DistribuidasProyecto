@@ -19,13 +19,13 @@ namespace BDProyecto
         {
 
         }
-        public Empleado(string nombre_empleado, string apellido_empleado, int cod_empleado, string cedula_empleado, decimal salario, DateTime fecha_inicio)
+        public Empleado(int cod_empleado, int cod_taller, string cedula_empleado, string nombre_empleado, string apellido_empleado, decimal salario, DateTime fecha_inicio)
         {
             this.cod_empleado = cod_empleado;
-            this.nombre_empleado = nombre_empleado;
-            this.apellido_empleado = apellido_empleado;
             this.cod_taller = cod_taller;
             this.cedula_empleado = cedula_empleado;
+            this.nombre_empleado = nombre_empleado;
+            this.apellido_empleado = apellido_empleado;
             this.salario = salario;
             this.fecha_inicio = fecha_inicio;
 
