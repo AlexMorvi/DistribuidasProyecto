@@ -9,27 +9,16 @@ namespace BDProyecto
 {
     public class TallerData
     {
-        public static int insertar_taller(Taller taller_Quito, Conexion conexion)
+
+        public static List<Taller> mostrar_talleres(string conexion) 
         {
-            int retorno = 0;
-            using (conexion.obtener_Conexion()) 
-            {
-                string query = "Insert into taller_Quito (cod_taller, nombre_taller, localidad_taller, cod_empleado)" +
-                $"values ({taller_Quito.cod_taller}, {taller_Quito.nombre_taller}, {taller_Quito.localidad_taller}, {taller_Quito.cod_empleado})";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
-                retorno = cmd.ExecuteNonQuery();
-            }
-            conexion.cerrar_Conexion();
-            return retorno;
-        }
-        public static List<Taller> mostrar_talleres_Quito(Conexion conexion) 
-        {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             List<Taller> lista = new List<Taller> ();
-            using (conexion.obtener_Conexion() ) 
+            using (sqlConnection) 
             {
-                conexion.abrir_Conexion();
-                string query = "select cod_taller, nombre_taller, localidad_taller cod_empleado from taller_Quito";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = "select cod_taller, nombre_taller, localidad_taller, cod_empleado from taller";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) 
                 {
@@ -40,37 +29,10 @@ namespace BDProyecto
                     taller_Quito.cod_empleado = reader.GetInt32(3);
                     lista.Add(taller_Quito);
                 }
-                conexion.cerrar_Conexion();
+                sqlConnection.Close();
                 return lista;
             }
         }
-        public static int actualizar_datos_taller_Quito(Taller taller_Quito, Conexion conexion) 
-        {
-            int retorno = 0;
-            using (conexion.obtener_Conexion()) 
-            {
-                conexion.abrir_Conexion();
-                string query = $"update taller_Quito set cod_taller={taller_Quito.cod_taller}, " +
-                    $"nombre_taller={taller_Quito.nombre_taller}, localidad_taller={taller_Quito.localidad_taller} " +
-                    $"cod_empleado={taller_Quito.cod_empleado} from taller_Quito where cod_taller={taller_Quito.cod_taller}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
-                retorno = cmd.ExecuteNonQuery();
-            }
-            conexion.cerrar_Conexion();
-            return retorno;
-        }
-        public static int eliminar_taller_Quito(Taller taller_Quito, Conexion conexion) 
-        {
-            int retorno = 0;
-            using (conexion.obtener_Conexion()) 
-            {
-                conexion.abrir_Conexion();
-                string query = $"delete from taller_Quito where cod_taller={taller_Quito.cod_taller}";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
-                retorno = cmd.ExecuteNonQuery();
-            }
-            conexion.cerrar_Conexion();
-            return retorno;
-        }
+       
     }
 }

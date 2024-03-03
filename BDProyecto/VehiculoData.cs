@@ -96,5 +96,9 @@ namespace BDProyecto
             sqlConnection.Close();
             return retorno;
         }
+        public static void eliminar_placa(Vehiculo vehiculo, string conexion)
+        {
+           
+        }
     }
 }

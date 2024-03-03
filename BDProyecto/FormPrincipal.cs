@@ -102,12 +102,12 @@ namespace BDProyecto
 
         private void btnTaller_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormTaller());
+            AbrirFormInPanel(new FormTaller(this.conexion));
         }
 
         private void btnReparacion_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormReparacion());
+            AbrirFormInPanel(new FormReparacion(this.conexion));
         }
                
     }

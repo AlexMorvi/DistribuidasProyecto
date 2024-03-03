@@ -27,14 +27,15 @@ namespace BDProyecto
             conexion.cerrar_Conexion();
             return retorno;
         }
-        public static List<Reparacion> mostrar_reparacion_Quito(Conexion conexion)
+        public static List<Reparacion> mostrar_reparacion(string conexion)
         {
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+            sqlConnection.Open();
             List<Reparacion> lista = new List<Reparacion>();
-            using (conexion.obtener_Conexion())
+            using (sqlConnection)
             {
-                conexion.abrir_Conexion();
-                string query = "select placa, cod_reparacion, cod_taller, tipo_reparacion, precio, fecha_reparacion, observaciones";
-                SqlCommand cmd = new SqlCommand(query, conexion.obtener_Conexion());
+                string query = "select placa, cod_reparacion, cod_taller, tipo_reparacion, precio, fecha_reparacion, observaciones from reparacion";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -43,12 +44,12 @@ namespace BDProyecto
                     reparacion.cod_reparacion = reader.GetInt32(1);
                     reparacion.cod_taller = reader.GetInt32(2);
                     reparacion.tipo_reparacion = reader.GetString(3);
-                    reparacion.precio = reader.GetInt32(4);
+                    reparacion.precio = reader.GetDecimal(4);
                     reparacion.fecha_reparacion = reader.GetDateTime(5);
                     reparacion.observaciones = reader.GetString(6);
                     lista.Add(reparacion);
                 }
-                conexion.cerrar_Conexion();
+                sqlConnection.Close();
                 return lista;
             }
 
